@@ -661,9 +661,9 @@
           </div>
         </div>
 
-        <!-- TAQVIMGA SAQLASH VA TELEFONGA ESLATMA TUGMASI -->
+        <!-- TAQVIMGA SAQLASH VA TELEFONGA ESLATMA TUGMASI (1-BOSISHDA QURILMAGA QARAB QO'SHADI) -->
         <div class="mt-5 mb-3 w-full">
-          <button onclick="openCalendarReminderModal()" class="w-full py-3.5 sm:py-4 px-4 sm:px-5 rounded-2xl bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#aa771c] hover:brightness-110 active:scale-95 text-[#071126] font-cinzel font-black text-xs sm:text-sm tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 shadow-2xl shadow-gold-500/30 border-2 border-[#fff8d6] transition-all group">
+          <button onclick="addWeddingToPhoneCalendar()" class="w-full py-3.5 sm:py-4 px-4 sm:px-5 rounded-2xl bg-gradient-to-r from-[#bf953f] via-[#fcf6ba] to-[#aa771c] hover:brightness-110 active:scale-95 text-[#071126] font-cinzel font-black text-xs sm:text-sm tracking-wider flex items-center justify-center gap-2.5 sm:gap-3 shadow-2xl shadow-gold-500/30 border-2 border-[#fff8d6] transition-all group">
             <span class="p-1.5 sm:p-2 rounded-full bg-[#071126]/15 text-[#071126] group-hover:scale-110 transition-transform flex items-center justify-center flex-shrink-0">
               <svg class="w-4 h-4 sm:w-5 sm:h-5 fill-current text-[#071126]" viewBox="0 0 24 24">
                 <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
@@ -685,87 +685,6 @@
     </div>
 
   </main>
-
-  <!-- ======================================================== -->
-  <!-- TELEFONGA ESLATMA VA TAQVIM MODALI (CALENDAR REMINDER)    -->
-  <!-- ======================================================== -->
-  <div id="calendar-modal" onclick="if(event.target === this) closeCalendarReminderModal()" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-4">
-    <div class="w-full max-w-md rounded-3xl bg-royal-900 border-2 border-gold-400/60 p-6 text-white shadow-2xl overflow-hidden relative">
-      
-      <!-- Modal bosh qismi -->
-      <div class="flex items-start justify-between pb-3 border-b border-gold-400/30">
-        <div class="flex items-center gap-2.5">
-          <div class="p-2 rounded-full bg-gold-500/20 text-gold-400">
-            <svg class="w-5 h-5 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="font-cinzel text-base font-bold text-gold-300">Telefonga Eslatma O'rnatish</h3>
-            <p class="text-[11px] text-gray-300">To'y kunini esdan chiqarmaslik uchun</p>
-          </div>
-        </div>
-
-        <button onclick="closeCalendarReminderModal()" class="p-1.5 rounded-full hover:bg-gold-500/20 text-gray-400 hover:text-white transition-all text-xl leading-none">
-          &times;
-        </button>
-      </div>
-
-      <!-- Eslatma tafsilotlari -->
-      <div class="my-4 space-y-3">
-        <div class="p-3.5 rounded-2xl bg-royal-950/80 border border-gold-400/30 text-left">
-          <p class="font-cinzel text-[10px] tracking-widest text-gold-400 uppercase">Tadbir:</p>
-          <h4 class="font-playfair text-base font-bold text-white mt-0.5 text-gold-light">
-            Shoxjahon & Gulnoza — Nikoh To'yi
-          </h4>
-          <p class="text-xs text-gold-300 mt-1 font-sans">
-            📅 <b>16-Noyabr, 2026-yil, soat 11:00 da</b>
-          </p>
-          <p class="text-xs text-gray-300 mt-0.5 font-sans">
-            📍 «Oqsaroy» to'yxonasi, Quva tumani
-          </p>
-        </div>
-
-        <!-- Telefonga keladigan avtomatik signallar -->
-        <div class="p-3.5 rounded-2xl bg-gold-500/10 border border-gold-400/40 text-left">
-          <p class="font-cinzel text-xs font-bold text-gold-300 flex items-center gap-1.5 mb-1.5">
-            <span>🔔</span>
-            <span>Telefonga keladigan signallar:</span>
-          </p>
-          <ul class="text-xs text-gray-200 space-y-1.5 pl-1">
-            <li class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-gold-400"></span>
-              <span><b>1 kun oldin</b> (15-noyabrda eslatma xabari)</span>
-            </li>
-            <li class="flex items-center gap-2">
-              <span class="w-2 h-2 rounded-full bg-gold-400"></span>
-              <span><b>2 soat oldin</b> (16-noyabr soat 09:00 da signal beradi)</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Saqlash tugmalari -->
-      <div class="space-y-2 pt-1">
-        <!-- 1. Telefon Taqvimi (iPhone & Android) -->
-        <button onclick="downloadICSWithAlarms()" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-gold-600 via-gold-400 to-gold-600 text-royal-950 font-cinzel font-bold text-xs uppercase tracking-wider hover:brightness-110 active:scale-95 transition-all shadow-lg flex items-center justify-center gap-2">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-          </svg>
-          <span>Telefon Kalendariga Qo'shish (Signal bilan)</span>
-        </button>
-
-        <!-- 2. Google Calendar -->
-        <button onclick="openGoogleCalendarWithAlarm()" class="w-full py-2.5 px-4 rounded-xl bg-royal-800 hover:bg-royal-700 border border-gold-400/30 text-gold-200 font-cinzel text-xs flex items-center justify-center gap-2 transition-all">
-          <svg class="w-4 h-4 text-gold-400" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
-          </svg>
-          <span>Google Calendar orqali qo'shish</span>
-        </button>
-      </div>
-
-    </div>
-  </div>
 
   <!-- Umumiy xabarnoma (Toast) -->
   <div id="general-toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-full bg-royal-900/95 border border-gold-400 text-gold-200 text-xs font-cinzel shadow-2xl backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
@@ -1007,19 +926,44 @@
     // ==========================================
     // TELEFONGA ESLATMA VA TAQVIM FUNKSIYALARI
     // ==========================================
-    function openCalendarReminderModal() {
-      const modal = document.getElementById('calendar-modal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
+    // ==========================================
+    // 1-BOSISHDA SMART KALENDARGA QO'SHISH
+    // Telefon rusumiga qarab (iOS / Android) to'g'ridan-to'g'ri ochadi
+    // ==========================================
+    function addWeddingToPhoneCalendar() {
+      const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/i.test(navigator.userAgent);
+
+      triggerGoldenConfetti();
+
+      if (isIOS) {
+        // iPhone (Apple Calendar)
+        showToast("✓ Apple Kalendarda «Qo'shish» (Add) ni bosing!");
+        
+        // Agar sayt veb-serverda (http/https) bo'lsa, webcal:// Apple Calendar'ni to'g'ridan-to'g'ri ilovada ochadi
+        if (window.location.protocol.startsWith('http')) {
+          try {
+            const fullUrl = new URL('wedding.ics', window.location.href).href;
+            const webcalUrl = fullUrl.replace(/^https?:\/\//i, 'webcal://');
+            window.location.href = webcalUrl;
+            return;
+          } catch (e) {}
+        }
+
+        // Mahalliy yoki zaxira holatda to'g'ridan-to'g'ri ICS faylini beradi
+        downloadDirectICS();
+      } else if (isAndroid) {
+        // Android telefonlar (Samsung, Xiaomi, Redmi, Honor, Pixel va h.k.)
+        showToast("✓ Kalendarga o'tildi, «Saqlash»ni bosing!");
+        openAndroidGoogleCalendar();
+      } else {
+        // Kompyuter (Desktop)
+        showToast("✓ Kalendarga o'tildi, «Saqlash»ni bosing!");
+        openAndroidGoogleCalendar();
+      }
     }
 
-    function closeCalendarReminderModal() {
-      const modal = document.getElementById('calendar-modal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    }
-
-    function downloadICSWithAlarms() {
+    function downloadDirectICS() {
       const icsData = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',
@@ -1053,33 +997,34 @@
       const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8' });
       const link = document.createElement('a');
       link.href = window.URL.createObjectURL(blob);
-      link.setAttribute('download', 'Shoxjahon_Gulnoza_Nikoh_Toyi.ics');
+      link.setAttribute('download', 'wedding.ics');
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
-
-      closeCalendarReminderModal();
-      showToast('✓ Telefon kalendariga eslatma bilan saqlandi!');
-      triggerGoldenConfetti();
     }
 
-    function openGoogleCalendarWithAlarm() {
+    function openAndroidGoogleCalendar() {
       const groom = "Shoxjahon";
       const bride = "Gulnoza";
-      const hall = "«Oqsaroy» to'yxonasi";
+      const hall = "«Oqsaroy» to'yxonasi, Quva tumani";
 
-      const title = encodeURIComponent(`${groom} & ${bride} - Nikoh To'yi`);
-      const details = encodeURIComponent(`Hurmatli mehmon, ${groom} va ${bride} ning nikoh to'yiga xush kelibsiz! Oqsaroy to'yxonasi, soat 11:00 da, Quva tumani.`);
-      const loc = encodeURIComponent(`Quva tumani, ${hall}`);
+      const title = encodeURIComponent(`💍 ${groom} & ${bride} — Nikoh To'yi`);
+      const details = encodeURIComponent(`Muhtaram mehmonimiz! Sizni ${groom} va ${bride} ning nikoh to'yi tantanasiga lutfan taklif etamiz!\n\nManzil: ${hall}\nBoshlanish vaqti: Soat 11:00 da.\n\nSizni to'y dasturxonimizda ko'rishdan behad mamnun bo'lamiz!`);
+      const loc = encodeURIComponent(hall);
 
       const calUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=20261116T060000Z/20261116T120000Z&details=${details}&location=${loc}`;
       window.open(calUrl, '_blank');
-      closeCalendarReminderModal();
     }
 
     function saveEventToCalendar() {
-      openCalendarReminderModal();
+      addWeddingToPhoneCalendar();
     }
+
+    function openCalendarReminderModal() {
+      addWeddingToPhoneCalendar();
+    }
+
+    function closeCalendarReminderModal() {}
 
     // ==========================================
     // WEB AUDIO API: SINTIZATSIYA QILINGAN TO'Y MUSIQASI
